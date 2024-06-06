@@ -45,6 +45,7 @@ class ProjectController extends Controller
             'types' => $types
         ];
 
+        
         return view('admin.projects.create', $data);
     }
 
@@ -63,7 +64,8 @@ class ProjectController extends Controller
             'name' => 'required|unique:projects,name|min:5|max:200',   // unique vuole il nome della tabella e il nome della colonna
             'client_name' => 'required|min:5|max:250',
             'summary' => 'nullable|min:10|max:500|',
-            'cover_image' => 'nullable|image|max:512'
+            'cover_image' => 'nullable|image|max:512',
+            'type_id' => 'nullable|exists:types,id' 
         ],
         
         [

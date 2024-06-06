@@ -10,7 +10,7 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','slug','client_name', 'summary', 'cover_image'];
+    protected $fillable = ['name','slug','client_name', 'summary', 'cover_image', 'type_id'];
 
     public function type() {
          // la foreign key fa capo alla tabella Type il cui model e' Type 

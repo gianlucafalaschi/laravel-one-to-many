@@ -26,11 +26,14 @@
         <select class="form-select"  id="type_id" name="type_id">
             <option value="">Select type</option>
            {@foreach ($types as $type)
-                <option value="{{ $type->id }}"> {{ $type->name }}</option>
+                <option @selected($type->id == old('type_id'))  value="{{ $type->id }}"> {{ $type->name }}</option>
             @endforeach
-            
         </select>
     </div>
+    @error('type_id')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
 
     <div class="mb-3">
       <label for="client_name" class="form-label">Client name</label>
