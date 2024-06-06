@@ -8,6 +8,8 @@ use App\Models\Project;
 use Illuminate\Support\Str;   // per usare gli l'helpers (si occupa di manipolare le stringhe, in questo caso lo uso per lo slug)
 use Illuminate\Validation\Rule; // per usare la classe rule in update nella validazione 
 use Illuminate\Support\Facades\Storage;  // per usare la classe Storage nello store ( per l'upload dei file)
+use App\Models\Type;
+
 
 class ProjectController extends Controller
 {
@@ -123,7 +125,7 @@ class ProjectController extends Controller
 
        $data = [
         'project' => $project
-
+        
        ];
        
        // dd($data);

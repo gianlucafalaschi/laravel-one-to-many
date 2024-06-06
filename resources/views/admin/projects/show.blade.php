@@ -16,6 +16,11 @@
     <div>
         <strong>Slug:</strong> {{ $project->slug }}
     </div>
+
+    <div>
+        {{-- type è il nome della funzione nel model Project per prendere la categoria dal project  --}}
+        <strong>Type:</strong> {{ $project->type ? $project->type->name : 'No Type' }}  
+    </div>
     
     <div>
         <strong>Client name:</strong></strong> {{ $project->client_name }}
