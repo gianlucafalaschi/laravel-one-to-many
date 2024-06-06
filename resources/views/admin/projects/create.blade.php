@@ -22,6 +22,17 @@
     @enderror
 
     <div class="mb-3">
+        <label for="type_id" class="form-label">Type</label>
+        <select class="form-select"  id="type_id" name="type_id">
+            <option value="">Select type</option>
+           {@foreach ($types as $type)
+                <option value="{{ $type->id }}"> {{ $type->name }}</option>
+            @endforeach
+            
+        </select>
+    </div>
+
+    <div class="mb-3">
       <label for="client_name" class="form-label">Client name</label>
       <input type="text" class="form-control" id="client_name" name="client_name" value=" {{old('client_name')}} ">
     </div>
