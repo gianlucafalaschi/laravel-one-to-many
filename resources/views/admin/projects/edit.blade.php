@@ -30,6 +30,19 @@
           <p><strong>No image uploaded</strong></p> 
         @endif
 
+        <div class="mb-3 mt-3">
+          <label for="type_id" class="form-label">Type</label>
+          <select class="form-select" id="type_id" name="type_id">
+            <option value="">Select a type</option>
+            @foreach ($types as $type)
+              <option @selected($type->id == old('type_id', $project->type_id)) value="{{ $type->id }}">{{ $type->name }}</option>
+            @endforeach
+          </select>
+        </div>
+        @error('type_id')
+          <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         <div class="mb-3">
           <label for="client_name" class="form-label">Client name</label>
           <input type="text" class="form-control" id="client_name" name="client_name" value="{{ old('client_name', $project->client_name) }}">

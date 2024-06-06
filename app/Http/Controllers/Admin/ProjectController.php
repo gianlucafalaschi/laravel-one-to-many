@@ -151,8 +151,14 @@ class ProjectController extends Controller
     {   
         //dd($project);
 
+        $types = Type::all();
+        
+        
+
         $data = [
-            'project'=> $project
+            'project'=> $project,
+            'types' => $types
+
         ];
         
 
@@ -183,7 +189,8 @@ class ProjectController extends Controller
             ],
             'client_name' => 'required|min:5|max:250',
             'summary' => 'nullable|min:10|max:500|',
-            'cover_image' => 'nullable|image|max:512'
+            'cover_image' => 'nullable|image|max:512',
+            'type_id' => 'nullable|exists:types,id'
         ],
         // custom error message
         [
